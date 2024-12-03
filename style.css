@@ -1,18 +1,20 @@
-/* Grundläggande styling */
+/* Grundläggande stil */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #87ceeb; /* Himmelblå */
-  color: #333;
-}
-
-.sky {
-  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f8ff;
+  color: #2c3e50;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #87ceeb, #ffffff); /* Himmel till vitt */
+  height: 100vh;
+}
+
+.sky {
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -21,8 +23,14 @@ body {
 }
 
 h1 {
-  font-size: 1.8rem;
-  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
   margin-bottom: 20px;
 }
 
@@ -30,23 +38,23 @@ h1 {
   position: relative;
   width: 200px;
   height: 300px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 #pot {
-  position: relative;
   width: 150px;
   height: 80px;
-  background: #8b4513;
+  background: #d7b59a;
   border-radius: 0 0 40px 40px;
-  margin: 0 auto;
+  position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 #soil {
   width: 100%;
   height: 30px;
-  background: #4b2e17;
+  background: #a57b5b;
   position: absolute;
   bottom: 0;
 }
@@ -54,7 +62,7 @@ h1 {
 #seed {
   width: 10px;
   height: 10px;
-  background: #6b4226;
+  background: #5c3c26;
   border-radius: 50%;
   position: absolute;
   top: -20px;
@@ -66,7 +74,7 @@ h1 {
 #stem {
   width: 5px;
   height: 0;
-  background: #2ecc71;
+  background: #3cb371;
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -77,12 +85,12 @@ h1 {
 #flower {
   width: 60px;
   height: 60px;
-  background: #e74c3c;
+  background: #ff6b6b;
   border-radius: 50%;
   position: absolute;
   bottom: 150px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0);
   animation: bloom 2s ease-in-out forwards;
 }
 
@@ -90,7 +98,7 @@ h1 {
   width: 100px;
   height: 60px;
   background: white;
-  border: 2px solid #d35400;
+  border: 2px solid #ff6b6b;
   border-radius: 5px;
   position: absolute;
   top: -80px;
@@ -102,20 +110,21 @@ h1 {
 #card p {
   margin: 0;
   font-size: 14px;
-  color: #d35400;
-  line-height: 60px;
+  color: #ff6b6b;
   text-align: center;
+  line-height: 60px;
 }
 
 button {
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 button:hover {
@@ -141,7 +150,7 @@ button:hover {
 
 @keyframes bloom {
   to {
-    transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1);
   }
 }
 
