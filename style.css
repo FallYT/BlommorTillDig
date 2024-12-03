@@ -1,0 +1,117 @@
+/* Grundläggande styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fdf5e6;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 90%; /* Anpassad för mobiler */
+}
+
+h1 {
+  color: #d35400;
+  font-size: 1.8rem; /* Anpassad storlek för mindre skärmar */
+  margin-bottom: 20px;
+}
+
+#garden {
+  position: relative;
+  margin: 20px auto;
+  width: 150px;
+  height: 250px; /* Mindre höjd för mobil */
+}
+
+#pot {
+  width: 120px;
+  height: 80px;
+  background: #8b4513;
+  border-radius: 0 0 60px 60px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#seed {
+  width: 8px;
+  height: 8px;
+  background: #6b4226;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#flower {
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#flower p {
+  font-size: 14px; /* Mindre textstorlek för mobil */
+  color: #d35400;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Styling för knappar */
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* Media queries för större skärmar */
+@media (min-width: 600px) {
+  #garden {
+    width: 200px;
+    height: 300px;
+  }
+
+  #pot {
+    width: 150px;
+    height: 100px;
+  }
+
+  #seed {
+    width: 10px;
+    height: 10px;
+    bottom: 80px;
+  }
+
+  #flower {
+    width: 100px;
+    height: 150px;
+    bottom: 120px;
+  }
+
+  button {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
