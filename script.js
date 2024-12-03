@@ -1,29 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const plantButton = document.getElementById("plantButton");
-  const waterButton = document.getElementById("waterButton");
-  const seed = document.getElementById("seed");
-  const stem = document.getElementById("stem");
-  const flower = document.getElementById("flower");
-  const card = document.getElementById("card");
-
-  plantButton.addEventListener("click", () => {
-    seed.classList.remove("hidden");
-    waterButton.classList.remove("hidden");
-    plantButton.classList.add("hidden");
-  });
-
-  waterButton.addEventListener("click", () => {
-    seed.classList.add("hidden");
-    stem.classList.remove("hidden");
-
-    setTimeout(() => {
-      flower.classList.remove("hidden");
-
-      setTimeout(() => {
-        card.classList.remove("hidden");
-      }, 2000);
-    }, 2000);
-
-    waterButton.classList.add("hidden");
-  });
-});
+function waterPlant() {
+  // Trigger flower growth animations
+  document.querySelector('.seed').style.animation = 'plantSeed 2s forwards';
+  document.querySelector('.stem').style.animation = 'growStem 4s forwards';
+  document.querySelector('.leaves').style.animation = 'growLeaves 6s forwards';
+  document.querySelector('.flower').style.animation = 'bloomFlower 6s forwards';
+  document.querySelector('.card').style.animation = 'fallCard 8s forwards';
+}
