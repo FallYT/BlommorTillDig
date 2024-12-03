@@ -1,161 +1,150 @@
-/* Grundläggande stil */
+/* General Body Styling */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f8ff;
-  color: #2c3e50;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.sky {
-  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
-  width: 100%;
-  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #87CEEB; /* Sky color */
 }
 
 .container {
+  position: relative;
   text-align: center;
-  max-width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-#garden {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  margin: 20px auto;
-}
-
-#pot {
-  width: 150px;
-  height: 80px;
-  background: #d7b59a;
-  border-radius: 0 0 40px 40px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-#soil {
+/* Sky Animation */
+.sky {
+  position: absolute;
   width: 100%;
-  height: 30px;
-  background: #a57b5b;
+  height: 100%;
+  background: linear-gradient(to top, #FFDDC1, #87CEEB);
+  animation: skyAnimation 10s infinite;
+}
+
+@keyframes skyAnimation {
+  0% { background: linear-gradient(to top, #FFDDC1, #87CEEB); }
+  50% { background: linear-gradient(to top, #FFB6C1, #ADD8E6); }
+  100% { background: linear-gradient(to top, #FFDDC1, #87CEEB); }
+}
+
+/* Pot and Soil */
+.pot {
+  width: 200px;
+  height: 100px;
+  background: #8B4513;
+  position: relative;
+  border-radius: 15px;
+}
+
+.soil {
+  width: 100%;
+  height: 40px;
+  background: #654321;
   position: absolute;
   bottom: 0;
+  border-radius: 10px;
 }
 
-#seed {
+/* Seed Animation */
+.seed {
   width: 10px;
   height: 10px;
-  background: #5c3c26;
+  background-color: #000;
   border-radius: 50%;
   position: absolute;
-  top: -20px;
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
-  animation: dropSeed 1s ease-in-out forwards;
+  animation: plantSeed 2s forwards;
 }
 
-#stem {
+@keyframes plantSeed {
+  0% { bottom: 45px; }
+  100% { bottom: 60px; }
+}
+
+/* Stem and Leaves */
+.stem {
   width: 5px;
-  height: 0;
-  background: #3cb371;
+  height: 50px;
+  background-color: #228B22;
   position: absolute;
-  bottom: 30px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-  animation: growStem 2s ease-in-out forwards;
-}
-
-#flower {
-  width: 60px;
-  height: 60px;
-  background: #ff6b6b;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  animation: bloom 2s ease-in-out forwards;
-}
-
-#card {
-  width: 100px;
-  height: 60px;
-  background: white;
-  border: 2px solid #ff6b6b;
-  border-radius: 5px;
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: dropCard 1.5s ease-in-out forwards;
-}
-
-#card p {
-  margin: 0;
-  font-size: 14px;
-  color: #ff6b6b;
-  text-align: center;
-  line-height: 60px;
-}
-
-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Animationer */
-@keyframes dropSeed {
-  to {
-    top: 70px;
-  }
+  animation: growStem 4s forwards;
 }
 
 @keyframes growStem {
-  to {
-    height: 120px;
-  }
+  0% { height: 0; }
+  100% { height: 50px; }
 }
 
-@keyframes bloom {
-  to {
-    transform: translateX(-50%) scale(1);
-  }
+.leaves {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  animation: growLeaves 6s forwards;
 }
 
-@keyframes dropCard {
-  to {
-    top: 120px;
-  }
+@keyframes growLeaves {
+  0% { width: 0; height: 0; }
+  100% { width: 50px; height: 30px; background-color: #228B22; border-radius: 50%; }
+}
+
+/* Flower Petals */
+.flower {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFD700;
+  border-radius: 50%;
+  opacity: 0;
+  animation: bloomFlower 6s forwards;
+}
+
+@keyframes bloomFlower {
+  0% { opacity: 0; width: 20px; height: 20px; }
+  100% { opacity: 1; width: 60px; height: 60px; }
+}
+
+.card {
+  position: absolute;
+  top: 60px;
+  width: 120px;
+  padding: 10px;
+  background: #fff;
+  text-align: center;
+  font-size: 18px;
+  color: #ff69b4;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fallCard 8s forwards;
+}
+
+@keyframes fallCard {
+  0% { opacity: 0; top: 60px; transform: rotate(0); }
+  100% { opacity: 1; top: 100px; transform: rotate(360deg); }
+}
+
+/* Water Button */
+.water-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #32CD32;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
