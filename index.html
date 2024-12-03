@@ -4,7 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magical Flower and Fireworks</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial", sans-serif;
+        }
+
+        #flower-container {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .flower {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0;
+            animation: grow 5s forwards, bloom 2s 5s forwards;
+        }
+
+        @keyframes grow {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 0;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: scale(1);
+                background-color: pink;
+            }
+            100% {
+                transform: scale(1.5);
+                background-color: #FF69B4;
+            }
+        }
+
+        #fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        @keyframes firework-animation {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+
+        /* CSS Glitter Animation */
+        #background-glitter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 20%) center/50px 50px;
+            animation: glitterAnimation 1.5s infinite;
+        }
+
+        @keyframes glitterAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 25px 25px;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Flower container -->
