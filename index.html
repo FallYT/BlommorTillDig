@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plantera en blomma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Blooming Flower</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="sky">
-    <div class="container">
-      <h1>En kärlekshälsning</h1>
-      <p>Följ stegen för att plantera en blomma och skicka kärlek.</p>
 
-      <div id="garden">
-        <div id="pot">
-          <div id="soil"></div>
-        </div>
-        <div id="seed" class="hidden"></div>
-        <div id="stem" class="hidden"></div>
-        <div id="flower" class="hidden"></div>
-        <div id="card" class="hidden">
-          <p>Från Isak ❤️</p>
-        </div>
-      </div>
-
-      <div class="buttons">
-        <button id="plantButton">Plantera frö</button>
-        <button id="waterButton" class="hidden">Vattna blomman</button>
+  <div class="container">
+    <div class="sky"></div>
+    <div class="pot">
+      <div class="soil"></div>
+      <div class="seed"></div>
+      <div class="stem"></div>
+      <div class="leaves"></div>
+      <div class="flower">
+        <div class="petals"></div>
+        <div class="card">Från Isak ❤️</div>
       </div>
     </div>
+    <button class="water-button" onclick="waterPlant()">Water the plant</button>
   </div>
 
   <script src="script.js"></script>
